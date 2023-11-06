@@ -39,6 +39,7 @@ class MrClean():
         self.fill_missing_all()
         self.fix_year_renovated()
         self.fix_selling_date()
+        self.fix_33()
         self.fix_dtypes()
         self.set_index_column('id')
         return self.df
@@ -63,6 +64,11 @@ class MrClean():
 
     def fix_selling_date(self, fn=pd.to_datetime):
         self.df.selling_date = fn(self.df.selling_date, format='%Y-%m-%d')
+
+    def fix_33(self):
+        id = '2402100895'
+        self.df[df]
+        #self.df.query('bedrooms = 33')
 
     def fix_dtypes(self):
         self.df = self.df.astype(self.DEFINITIONS_DATATYPES)
